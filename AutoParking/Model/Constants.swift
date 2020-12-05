@@ -4,7 +4,7 @@
 //
 //  Created by Evgeniy Radchenko on 05.12.2020.
 //
-// Test gitignore
+// 
 
 import Foundation
 

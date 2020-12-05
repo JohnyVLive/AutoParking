@@ -116,6 +116,6 @@ iOSInjectionProject/
 
 
 #Personal data and Constants
-/Model/Constants.swift
+Model/Constants.swift
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,macos
