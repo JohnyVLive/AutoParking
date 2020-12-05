@@ -7,6 +7,28 @@
 
 import Foundation
 
-struct SessionModel {
-    let sessionID: String
+class SessionModel {
+    private var success: Bool
+    private var sessionID: String
+    
+    static let shared = SessionModel()
+    
+    private init()
+    {
+        self.success = false
+        self.sessionID = "";
+    }
+    
+    func set(_ success: Bool, _ sessionID: String){
+        self.success = success
+        self.sessionID = sessionID
+    }
+    
+    func getSuccess() -> Bool{
+        return self.success
+    }
+    
+    func getSessionID() -> String{
+        return self.sessionID
+    }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ConnectionManagerDelegate {
-    func didUpdateSID(session: SessionModel)
+    func didUpdateSID()
     func didUpdateLPR(lpr: [LPRModel])
     func didFailWithConnection(error: Error)
 }
@@ -20,6 +20,8 @@ class ConnectionManager: NSObject{
     let lprCommand = K.lprCommand
     let SDKPassword: String = K.SDKPassword
     
+    
+    var lprEventsArray = [LPRModel]()
     var delegate: ConnectionManagerDelegate?
         
     func createSession(){
@@ -27,25 +29,24 @@ class ConnectionManager: NSObject{
         performRequest(with: connectURL, and: "session")
     }
     
-    func loadLPR(sid: SessionModel?){
-        if let sid = sid?.sessionID{
+    func loadLPR(with sid: String){
+        if SessionModel.shared.getSuccess(){
+            let sid = SessionModel.shared.getSessionID()
             let connectURL = self.connectURL + lprCommand + "sid=\(sid)"
             //TODO: - Remove print
-            print(connectURL)
-            performRequest(with: connectURL, and: "lpr")
+//            print(connectURL)
+            self.performRequest(with: connectURL, and: "lpr")
+            
         } else {
             createSession()
         }
-        
     }
     
     //TODO: - Need to fix secure connection in PList. Delete arbitary loads and create exeption for specific URL
 
     func performRequest(with urlString: String, and type: String){
         if let url = URL(string: urlString){
-//            let session = URLSession(configuration: .default)
             let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 60.0)
-//            let session = URLSession(configuration: .default)
             let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
             let task = session.dataTask(with: request) { (data, response, error) in
                 if let error = error as NSError? {
@@ -58,9 +59,8 @@ class ConnectionManager: NSObject{
                     NSLog("task finished with status %d, bytes %d", response.statusCode, data!.count)
                     switch type {
                     case "session":
-                        if let sessionData = self.parseSession(safeData){
-                            self.delegate?.didUpdateSID(session: sessionData)
-                        }
+                        self.parseSession(safeData)
+                        
                     case "lpr":
                         if let lprData = self.parseLPR(safeData){
                             self.delegate?.didUpdateLPR(lpr: lprData)
@@ -75,18 +75,20 @@ class ConnectionManager: NSObject{
         }
     }
 
-    func parseSession(_ receivedData: Data) -> SessionModel?{
+    func parseSession(_ receivedData: Data){
         let decoder = JSONDecoder()
         do{
             let decodedData = try decoder.decode(SessionData.self, from: receivedData)
-            let sessionID = SessionModel(sessionID: decodedData.sid)
-            return sessionID
+            let success = decodedData.success == 1 ? true : false
+            let sid = decodedData.sid
+            SessionModel.shared.set(success, sid)
+            self.delegate?.didUpdateSID()
         } catch {
             delegate?.didFailWithConnection(error: error)
-            return nil
         }
     }
     
+    //Parsing data of LPR events and creating an array
     func parseLPR(_ receivedData: Data) -> [LPRModel]?{
         var lprEvents = [LPRModel]()
         let decoder = JSONDecoder()
@@ -114,6 +116,7 @@ class ConnectionManager: NSObject{
             return nil
         }
     }
+    
 }
 
 //MARK: - URLSession Delegate for unsecure connection

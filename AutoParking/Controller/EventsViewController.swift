@@ -7,11 +7,20 @@
 
 import UIKit
 
-class NumbersViewController: UITableViewController {
+class EventsViewController: UITableViewController {
 
+    var connectionManager = ConnectionManager()
+    let sid = SessionModel.shared.getSessionID()
+    var lprEventsArray = [LPRModel]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        connectionManager.delegate = self
+        connectionManager.loadLPR(with: sid)
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -21,25 +30,25 @@ class NumbersViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return lprEventsArray.count
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return lprEventsArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventItemCell", for: indexPath)
+        cell.textLabel?.text = lprEventsArray[indexPath.row].plate
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -85,5 +94,30 @@ class NumbersViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func loadEventsData(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
 
+}
+
+//MARK: - ConnectionManager Delegate
+extension EventsViewController: ConnectionManagerDelegate{
+    func didUpdateSID() {
+        
+    }
+    
+    func didUpdateLPR(lpr: [LPRModel]) {
+        lprEventsArray = lpr
+        loadEventsData()
+    }
+    
+    func didFailWithConnection(error: Error) {
+        print(error)
+    }
+    
+    
 }

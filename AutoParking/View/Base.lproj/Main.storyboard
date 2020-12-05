@@ -34,7 +34,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <segue destination="gQJ-K5-k5b" kind="presentation" modalPresentationStyle="fullScreen" id="i17-5K-kqY"/>
+                        <segue destination="gQJ-K5-k5b" kind="presentation" identifier="gotoEvents" modalPresentationStyle="fullScreen" id="tjr-HV-Bhm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -44,13 +44,13 @@
         <!--Cars on parking-->
         <scene sceneID="U6Y-sI-2tf">
             <objects>
-                <tableViewController id="n5Q-Cm-R6A" customClass="NumbersViewController" customModule="AutoParking" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="n5Q-Cm-R6A" customClass="EventsViewController" customModule="AutoParking" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5tV-7M-vYU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ps2-oa-mYT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventItemCell" id="ps2-oa-mYT">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ps2-oa-mYT" id="Jsr-lG-dPE">
@@ -79,6 +79,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gQJ-K5-k5b" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="x0U-Vd-wKk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EMd-8m-4Ou">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
