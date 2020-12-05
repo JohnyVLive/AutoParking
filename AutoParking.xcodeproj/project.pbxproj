@@ -7,25 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F935E0BD257B9F9C005FCFD9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935E0BC257B9F9C005FCFD9 /* Constants.swift */; };
 		F9F55773257789E400CA0DAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F55772257789E400CA0DAE /* AppDelegate.swift */; };
 		F9F55775257789E400CA0DAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F55774257789E400CA0DAE /* SceneDelegate.swift */; };
-		F9F55777257789E400CA0DAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F55776257789E400CA0DAE /* ViewController.swift */; };
+		F9F55777257789E400CA0DAE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F55776257789E400CA0DAE /* StartViewController.swift */; };
 		F9F5577A257789E400CA0DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F55778257789E400CA0DAE /* Main.storyboard */; };
 		F9F5577D257789E400CA0DAE /* AutoParking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9F5577B257789E400CA0DAE /* AutoParking.xcdatamodeld */; };
 		F9F5577F257789E600CA0DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9F5577E257789E600CA0DAE /* Assets.xcassets */; };
 		F9F55782257789E600CA0DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F55780257789E600CA0DAE /* LaunchScreen.storyboard */; };
+		F9F5579225778F6000CA0DAE /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F5579125778F6000CA0DAE /* NumbersViewController.swift */; };
+		F9F557952577936700CA0DAE /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F557942577936700CA0DAE /* SessionData.swift */; };
+		F9F557982577938100CA0DAE /* LPRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F557972577938100CA0DAE /* LPRData.swift */; };
+		F9F5579B257795AC00CA0DAE /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F5579A257795AC00CA0DAE /* ConnectionManager.swift */; };
+		F9F5579F2577D50900CA0DAE /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F5579E2577D50900CA0DAE /* SessionModel.swift */; };
+		F9F557A225781B3600CA0DAE /* LPRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F557A125781B3600CA0DAE /* LPRModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F935E0BC257B9F9C005FCFD9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F9F5576F257789E400CA0DAE /* AutoParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F55772257789E400CA0DAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9F55774257789E400CA0DAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F9F55776257789E400CA0DAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F9F55776257789E400CA0DAE /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		F9F55779257789E400CA0DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9F5577C257789E400CA0DAE /* AutoParking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AutoParking.xcdatamodel; sourceTree = "<group>"; };
 		F9F5577E257789E600CA0DAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9F55781257789E600CA0DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9F55783257789E600CA0DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9F5579125778F6000CA0DAE /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
+		F9F557942577936700CA0DAE /* SessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
+		F9F557972577938100CA0DAE /* LPRData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRData.swift; sourceTree = "<group>"; };
+		F9F5579A257795AC00CA0DAE /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		F9F5579E2577D50900CA0DAE /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		F9F557A125781B3600CA0DAE /* LPRModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +74,53 @@
 			children = (
 				F9F55772257789E400CA0DAE /* AppDelegate.swift */,
 				F9F55774257789E400CA0DAE /* SceneDelegate.swift */,
-				F9F55776257789E400CA0DAE /* ViewController.swift */,
-				F9F55778257789E400CA0DAE /* Main.storyboard */,
-				F9F5577E257789E600CA0DAE /* Assets.xcassets */,
-				F9F55780257789E600CA0DAE /* LaunchScreen.storyboard */,
+				F9F5578A25778A3D00CA0DAE /* Model */,
+				F9F5578B25778A4900CA0DAE /* View */,
+				F9F5578C25778A5200CA0DAE /* Controller */,
+				F9F5578E25778A9100CA0DAE /* Supporting Files */,
 				F9F55783257789E600CA0DAE /* Info.plist */,
-				F9F5577B257789E400CA0DAE /* AutoParking.xcdatamodeld */,
 			);
 			path = AutoParking;
+			sourceTree = "<group>";
+		};
+		F9F5578A25778A3D00CA0DAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9F5577B257789E400CA0DAE /* AutoParking.xcdatamodeld */,
+				F9F5579A257795AC00CA0DAE /* ConnectionManager.swift */,
+				F9F557972577938100CA0DAE /* LPRData.swift */,
+				F9F557A125781B3600CA0DAE /* LPRModel.swift */,
+				F9F557942577936700CA0DAE /* SessionData.swift */,
+				F9F5579E2577D50900CA0DAE /* SessionModel.swift */,
+				F935E0BC257B9F9C005FCFD9 /* Constants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9F5578B25778A4900CA0DAE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9F55778257789E400CA0DAE /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9F5578C25778A5200CA0DAE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F9F55776257789E400CA0DAE /* StartViewController.swift */,
+				F9F5579125778F6000CA0DAE /* NumbersViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F9F5578E25778A9100CA0DAE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9F5577E257789E600CA0DAE /* Assets.xcassets */,
+				F9F55780257789E600CA0DAE /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F55777257789E400CA0DAE /* ViewController.swift in Sources */,
+				F9F55777257789E400CA0DAE /* StartViewController.swift in Sources */,
+				F935E0BD257B9F9C005FCFD9 /* Constants.swift in Sources */,
+				F9F557982577938100CA0DAE /* LPRData.swift in Sources */,
+				F9F557A225781B3600CA0DAE /* LPRModel.swift in Sources */,
+				F9F5579F2577D50900CA0DAE /* SessionModel.swift in Sources */,
+				F9F5579225778F6000CA0DAE /* NumbersViewController.swift in Sources */,
 				F9F5577D257789E400CA0DAE /* AutoParking.xcdatamodeld in Sources */,
 				F9F55773257789E400CA0DAE /* AppDelegate.swift in Sources */,
+				F9F557952577936700CA0DAE /* SessionData.swift in Sources */,
+				F9F5579B257795AC00CA0DAE /* ConnectionManager.swift in Sources */,
 				F9F55775257789E400CA0DAE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3KLKPU5J9;
 				INFOPLIST_FILE = AutoParking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3KLKPU5J9;
 				INFOPLIST_FILE = AutoParking/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
